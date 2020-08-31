@@ -61,6 +61,7 @@ export default function App() {
       <SafeAreaView style={styles.header}>
         <View style={styles.background} />
         <Text style={styles.titleApp}>Cotizador de préstamos</Text>
+        <Text style={styles.titleApp}>con interés anual</Text>
         <Form
           setCapital={setCapital}
           setInteres={setInteres}
