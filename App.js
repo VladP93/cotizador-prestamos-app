@@ -1,25 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Text, SafeAreaView, StatusBar} from 'react-native';
 import Form from './src/components/Form.js';
+import Footer from './src/components/Footer.js';
 
 import colors from './src/utils/colors';
 
 export default function App() {
+  const [capital, setCapital] = useState(null);
+  const [interes, setInteres] = useState(null);
+  const [months, setMonths] = useState(null);
+
+  const calculate = () => {
+    console.log('capital =>' + capital);
+    console.log('interes =>' + interes);
+    console.log('months =>' + months);
+  };
+
   return (
-    <SafeAreaView>
+    <>
       <StatusBar barStyle="light-content" />
-      <View style={styles.header}>
+      <SafeAreaView style={styles.header}>
         <View style={styles.background} />
         <Text style={styles.titleApp}>Cotizador de préstamos</Text>
-        <Form />
-      </View>
+        <Form
+          setCapital={setCapital}
+          setInteres={setInteres}
+          setMonths={setMonths}
+        />
+      </SafeAreaView>
       <View>
         <Text>RESULT</Text>
       </View>
-      <View>
-        <Text>FOOTER</Text>
-      </View>
-    </SafeAreaView>
+      <Footer calculate={calculate} />
+    </>
   );
 }
 
