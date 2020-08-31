@@ -25,6 +25,10 @@ export default function Form(props) {
       <RNPickerSelect
         style={pickerSelectStyles}
         onValueChange={(value) => setMonths(value)}
+        placeholder={{
+          label: 'Selecciona el plazo',
+          value: null,
+        }}
         items={[
           {label: '3 Meses', value: 3},
           {label: '6 Meses', value: 6},
